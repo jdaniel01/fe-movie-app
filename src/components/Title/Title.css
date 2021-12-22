@@ -1,0 +1,13 @@
+.title-container{
+    width: 25%;
+    margin: 15px;
+    display: flex;
+}
+.title-container img{
+    width: 45%;
+}
+.title-container h3{
+    display: flex; 
+    flex-flow: row wrap;
+    width: 45%;
+}
