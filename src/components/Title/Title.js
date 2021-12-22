@@ -9,7 +9,7 @@ export default function Title({ title, toggleDetails }) {
         <div className="title-container" onClick={() => toggleDetails(title.id)} >
             <div className="details-container">
                 <h3>{title.original_title}</h3>
-                <div>
+                <div className="sub-details">
                     <p>{title.media_type}</p>
                     <p>⭐{title.vote_average}</p>
                 </div>

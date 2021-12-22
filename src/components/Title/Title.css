@@ -1,13 +1,24 @@
 .title-container{
-    width: 25%;
     margin: 15px;
     display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-items: flex-end;
 }
 .title-container img{
-    width: 45%;
+    width: 80%;
+    display: flex;
 }
 .title-container h3{
+
     display: flex; 
     flex-flow: row wrap;
-    width: 45%;
+    width: 100%;
+}
+
+.sub-details{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: space-evenly;
 }

@@ -101,9 +101,11 @@ export default function App() {
                         <img src={logo} />
                     </div>
                 }
-                {viewing !== 'example' && media[viewing] && media[viewing].map(title =>
-                    <Title title={title} toggleDetails={toggleDetails} />
-                )}
+                {viewing !== 'example' && media[viewing] && media[viewing].map(title => {
+                    if (title.original_title) {
+                        return (< Title title={title} toggleDetails={toggleDetails} />)
+                    }
+                })}
             </section>
 
         </div>
