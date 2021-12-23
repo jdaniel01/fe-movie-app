@@ -5,8 +5,9 @@ import "./Title.css";
 
 export default function Title({ title, toggleDetails }) {
 
+
     return (
-        <div className="title-container" onClick={() => toggleDetails(title.id)} >
+        <div className={`${title.media_type}-container`} onClick={() => toggleDetails(title.id)} >
             <div className="details-container">
                 <h3>{title.original_title}</h3>
                 <div className="sub-details">

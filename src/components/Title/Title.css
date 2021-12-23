@@ -1,19 +1,37 @@
-.title-container{
+div[class*='-container']{
     margin: 15px;
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    justify-items: flex-end;
+    box-sizing: border-box;
 }
-.title-container img{
-    width: 80%;
-    display: flex;
+.movie-container{
+    background-color: rgba(205, 92, 92, .7);
+    width: 30%;
+    box-sizing: border-box;
 }
-.title-container h3{
+.show-container{
+    background-color: rgba(74, 0, 128, .7);
+    width: 30%;
+    box-sizing: border-box;
+}
 
-    display: flex; 
-    flex-flow: row wrap;
+.details-container{
     width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.div[class*='-container']>img{
+    display: flex;
+    justify-self: center;
+}
+.div[class*='-container'] h3{
+    box-sizing: border-box;
+    display: flex; 
+    width: 100%;
+    justify-content: center;
 }
 
 .sub-details{
@@ -21,4 +39,5 @@
     flex-flow: row wrap;
     width: 100%;
     justify-content: space-evenly;
+    box-sizing: border-box;
 }
