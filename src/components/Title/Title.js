@@ -9,10 +9,9 @@ export default function Title({ title, toggleDetails }) {
     return (
         <div className={`${title.media_type}-container`} onClick={() => toggleDetails(title.id)} >
             <div className="details-container">
-                <h3>{title.original_title}</h3>
+                <h3>{(title.title) ? title.title : title.name}</h3>
                 <div className="sub-details">
                     <p>{title.media_type}</p>
-                    <p>⭐{title.vote_average}</p>
                 </div>
             </div>
             <img src={`https://image.tmdb.org/t/p/w300/${title.poster_path}?api_key=${apiKey}`} />

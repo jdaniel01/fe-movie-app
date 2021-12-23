@@ -1,0 +1,6 @@
+.turnpage_container{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 30%;
+    justify-content: space-evenly;
+}

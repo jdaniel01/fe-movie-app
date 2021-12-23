@@ -4,16 +4,16 @@ div[class*='-container']{
     flex-flow: column wrap;
     align-items: center;
     box-sizing: border-box;
+    align-content: center;
+    justify-content: flex-start;
 }
 .movie-container{
     background-color: rgba(205, 92, 92, .7);
     width: 30%;
-    box-sizing: border-box;
 }
-.show-container{
+.tv-container{
     background-color: rgba(74, 0, 128, .7);
     width: 30%;
-    box-sizing: border-box;
 }
 
 .details-container{
@@ -21,17 +21,22 @@ div[class*='-container']{
     display: flex;
     flex-flow: column wrap;
     align-items: center;
+    box-sizing: border-box;
 }
 
-.div[class*='-container']>img{
+div[class*='-container']>img{
     display: flex;
     justify-self: center;
+    box-sizing: border-box;
+    margin: 0;
 }
-.div[class*='-container'] h3{
+div[class*='-container']>h3{
     box-sizing: border-box;
     display: flex; 
     width: 100%;
     justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .sub-details{
@@ -41,3 +46,4 @@ div[class*='-container']{
     justify-content: space-evenly;
     box-sizing: border-box;
 }
+

@@ -4,6 +4,7 @@ import logo from './assets/images/logo512.png';
 import "./App.css";
 
 import { token, apiKey } from './assets/index';
+import TurnPage from "./components/TurnPage/TurnPage";
 export default function App() {
 
     const [page, setPage] = useState(1);
@@ -68,7 +69,7 @@ export default function App() {
 
     }
 
-    async function topThisWeek() {
+    async function topWeek() {
         const res = await fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&page=${page}`)
         const data = await res.json();
         console.log("This Week: ", data);
@@ -85,15 +86,25 @@ export default function App() {
     }
 
     useEffect(() => {
-        console.log("User: ", user);
-    }, [user])
+        if (page < 1) {
+            setPage(1);
+        }
+        console.log("Page: ", page);
+        if (viewing === "today") {
+            topToday();
+        }
+        else if (viewing === "week") {
+            topWeek();
+        }
+    }, [page])
 
     return (
         <div className="app">
             <div className="category_block">
                 <button type='button' onClick={() => topToday()}>Today's Favorites</button>
-                <button type='button' onClick={() => topThisWeek()}>This Week's Favorites</button>
+                <button type='button' onClick={() => topWeek()}>This Week's Favorites</button>
             </div>
+            <TurnPage page={page} setPage={setPage} />
             <section className="results_block">
                 {viewing === 'example' && media['example'].length &&
                     <div className="title-container" onClick={() => toggleDetails('example')} hidden={details["example"]}>
@@ -101,12 +112,11 @@ export default function App() {
                         <img src={logo} />
                     </div>
                 }
-                {viewing !== 'example' && media[viewing] && media[viewing].map(title => {
-                    if (title.original_title) {
-                        return (< Title title={title} toggleDetails={toggleDetails} />)
-                    }
-                })}
+                {viewing !== 'example' && media[viewing] && media[viewing].map(title =>
+                    < Title title={title} toggleDetails={toggleDetails} key={title.id} />
+                )}
             </section>
+            <TurnPage page={page} setPage={setPage} />
 
         </div>
     )
