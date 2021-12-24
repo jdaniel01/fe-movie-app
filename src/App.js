@@ -109,7 +109,7 @@ export default function App() {
                 {viewing === 'example' && media['example'].length &&
                     <div className="title-container" onClick={() => toggleDetails('example')} hidden={details["example"]}>
                         <h3>Title of Film, Show, etc.</h3>
-                        <img src={logo} />
+                        <img src={logo} alt="movie reel" />
                     </div>
                 }
                 {viewing !== 'example' && media[viewing] && media[viewing].map(title =>

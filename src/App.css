@@ -6,6 +6,8 @@
     align-items: center;
     justify-items: center;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .results_block{
@@ -21,7 +23,6 @@
     width: fit-content;
     flex-flow: row wrap;
     column-width: fit-content;
-    border: 1px solid red;
     margin: 2rem;
 }
 .category_block>button{

@@ -3,4 +3,6 @@
     flex-flow: row nowrap;
     width: 30%;
     justify-content: space-evenly;
+    color: white;
+    font-weight: 600;
 }

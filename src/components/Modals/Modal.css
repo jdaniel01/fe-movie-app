@@ -1,0 +1,12 @@
+.cover_modal{
+    position:absolute;
+    top: 0;
+    width: 300px;
+    height: 450px;
+    background-color: rgba(0, 0, 0, .40);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
