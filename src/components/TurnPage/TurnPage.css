@@ -6,3 +6,10 @@
     color: white;
     font-weight: 600;
 }
+
+.turnpage_container div:hover{
+    color: red;
+    cursor: pointer;
+    animation: ease-in-out;
+    animation-duration: 2000ms;
+}

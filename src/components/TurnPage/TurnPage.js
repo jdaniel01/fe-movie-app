@@ -8,16 +8,16 @@ export default function TurnPage({ page, setPage }) {
 
     return (
         <div className="turnpage_container">
-            <div className="one_page_less" onClick={() => (page > 1) ? setPage(page - 1) : setPage(1)}>◀</div>
+            <div className="one_page_less" id={page} onClick={() => (page > 1) ? setPage(page - 1) : setPage(1)}>◀</div>
             {page > 3 ? (
                 <>
-                    <div className="page_number" id={`${page - 3}`}>{page - 3}</div>
-                    <div className="page_number" id={`${page - 2}`}>{page - 2}</div>
-                    <div className="page_number" id={`${page - 1}`}>{page - 1}</div>
-                    <div className="page_number" id={`${page}`}>{page}</div>
-                    <div className="page_number" id={`${page + 1}`}>{page + 1}</div>
-                    <div className="page_number" id={`${page + 2}`}>{page + 2}</div>
-                    <div className="page_number" id={`${page + 3}`}>{page + 3}</div>
+                    <div className="page_number" id={`${page - 3}`} onClick={(e) => setPage(Number(e.target.id))}>{page - 3}</div>
+                    <div className="page_number" id={`${page - 2}`} onClick={(e) => setPage(Number(e.target.id))}>{page - 2}</div>
+                    <div className="page_number" id={`${page - 1}`} onClick={(e) => setPage(Number(e.target.id))}>{page - 1}</div>
+                    <div className="page_number" id={`${page}`} onClick={(e) => setPage(Number(e.target.id))}>{page}</div>
+                    <div className="page_number" id={`${page + 1}`} onClick={(e) => setPage(Number(e.target.id))}>{page + 1}</div>
+                    <div className="page_number" id={`${page + 2}`} onClick={(e) => setPage(Number(e.target.id))}>{page + 2}</div>
+                    <div className="page_number" id={`${page + 3}`} onClick={(e) => setPage(Number(e.target.id))}>{page + 3}</div>
                 </>
             ) : (
                 <>

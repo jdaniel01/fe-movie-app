@@ -9,7 +9,7 @@ export default function Title({ title, toggleDetails }) {
     const [display, setDisplay] = useState(false);
 
     return (
-        <div className={`${title.media_type}-container`} onClick={() => toggleDetails(title.id)} onMouseEnter={() => setDisplay(true)} onMouseLeave={() => setDisplay(false)}>
+        <div className={`${title.media_type}-container`} onClick={() => toggleDetails(title.id)} >
             {/*handle title.name and title.title*/}
             <div className="marquee">{title.title ? title.title : title.name}</div>
             <div className="details_container">
@@ -18,7 +18,7 @@ export default function Title({ title, toggleDetails }) {
                     {/* <div className="media-detail"></div> */}
                 </div>
             </div>
-            <div className='cover_container'>
+            <div className='cover_container' onMouseEnter={() => setDisplay(true)} onMouseLeave={() => setDisplay(false)}>
                 <img src={`https://image.tmdb.org/t/p/w300/${title.poster_path}?api_key=${apiKey}`} className="cover_image" alt={title.media_type} />
                 <CoverModal display={display} title={title} />
             </div>
