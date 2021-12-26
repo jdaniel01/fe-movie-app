@@ -113,7 +113,7 @@ export default function App() {
                     </div>
                 }
                 {viewing !== 'example' && media[viewing] && media[viewing].map(title =>
-                    < Title title={title} toggleDetails={toggleDetails} key={title.id} />
+                    <Title title={title} toggleDetails={toggleDetails} key={title.id} />
                 )}
             </section>
             <TurnPage page={page} setPage={setPage} />

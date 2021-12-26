@@ -10,3 +10,32 @@
     align-items: center;
     z-index: 1;
 }
+
+.cover_modal-info{
+    position:absolute;
+    top: 0;
+    width: 300px;
+    height: 450px;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 1;
+    color: white;
+    font-size: 14pt;
+    font-weight: 400;
+    padding: 10px;
+}
+
+.cover_modal-info div{
+    margin-bottom: 1em;
+}
+
+.title_details{
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
