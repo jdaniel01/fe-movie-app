@@ -93,8 +93,8 @@ export default function App() {
     return (
         <div className="app">
             <div className="category_block">
-                <button type='button' onClick={() => topToday()}>Today's Favorites</button>
-                <button type='button' onClick={() => topWeek()}>This Week's Favorites</button>
+                <button type='button' onClick={() => topToday(1)}>Today's Favorites</button>
+                <button type='button' onClick={() => topWeek(1)}>This Week's Favorites</button>
             </div>
             <TurnPage page={page} setPage={setPage} />
             <section className="results_block">

@@ -14,7 +14,7 @@ export default function TurnPage({ page, setPage }) {
                     <div className="page_number" id={`${page - 3}`} onClick={(e) => setPage(Number(e.target.id))}>{page - 3}</div>
                     <div className="page_number" id={`${page - 2}`} onClick={(e) => setPage(Number(e.target.id))}>{page - 2}</div>
                     <div className="page_number" id={`${page - 1}`} onClick={(e) => setPage(Number(e.target.id))}>{page - 1}</div>
-                    <div className="page_number" id={`${page}`} onClick={(e) => setPage(Number(e.target.id))}>{page}</div>
+                    <div className="page_number-current" id={`${page}`} onClick={(e) => setPage(Number(e.target.id))}>{page}</div>
                     <div className="page_number" id={`${page + 1}`} onClick={(e) => setPage(Number(e.target.id))}>{page + 1}</div>
                     <div className="page_number" id={`${page + 2}`} onClick={(e) => setPage(Number(e.target.id))}>{page + 2}</div>
                     <div className="page_number" id={`${page + 3}`} onClick={(e) => setPage(Number(e.target.id))}>{page + 3}</div>

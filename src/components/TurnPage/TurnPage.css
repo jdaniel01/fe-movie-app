@@ -13,3 +13,7 @@
     animation: ease-in-out;
     animation-duration: 2000ms;
 }
+
+.page_number-current{
+    color: red;
+}
