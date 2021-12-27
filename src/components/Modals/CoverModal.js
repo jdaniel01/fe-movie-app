@@ -18,6 +18,8 @@ const month = {
 
 export default function CoverModal({ display, title }) {
 
+    const [modalT, setModalT] = useState("cover_modal-info");
+
     const [info, setInfo] = useState({
         title: (title.title) ? title.title : title.name,
         id: title.id,
@@ -29,10 +31,18 @@ export default function CoverModal({ display, title }) {
     if (display) {
 
         return (
-            <div className="cover_modal-info">
-                <div>{info.title}</div>
+            <div className={`${modalT}`} onMouseLeave={(e) => setModalT('cover_modal')}>
+                {modalT === "cover_modal-info" &&
+                    <>
+                        <div>{info.title}</div>
                 {/* <div>{info.vote}⭐</div> */}
-                <div className="title_details">{info.overview}</div>
+                    <div className="title_details">{info.overview}</div>
+                    </>
+
+                }
+                {modalT === "cover_modal" &&
+                    <div className="info_button" onMouseEnter={() => setModalT("cover_modal-info")}>more...</div>
+                }
             </div>
         )
     }

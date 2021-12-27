@@ -8,7 +8,7 @@ import TurnPage from "./components/TurnPage/TurnPage";
 export default function App() {
 
     const [page, setPage] = useState(1);
-    const [viewing, setViewing] = useState("example");
+    const [viewing, setViewing] = useState("today");
     const [user, setUser] = useState({ request_token: '', session_id: '', status: '' });
     const [media, setMedia] = useState({ example: [{}], all: [], today: [], week: [] });
 
@@ -23,10 +23,6 @@ export default function App() {
             setDetails({ ...details, [titleId]: false });
         }
     }
-
-    useEffect(() => {
-        console.log(details);
-    }, [details])
 
 
     async function guestLogin() {
@@ -69,16 +65,16 @@ export default function App() {
 
     }
 
-    async function topWeek() {
-        const res = await fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&page=${page}`)
+    const topWeek = async (thisPage) => {
+        const res = await fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&page=${(thisPage) ? thisPage : page}`)
         const data = await res.json();
         console.log("This Week: ", data);
         setViewing("week");
         setMedia({ ...media, week: data.results })
     }
 
-    async function topToday() {
-        const res = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${apiKey}&page=${page}`)
+    const topToday = async (thisPage) => {
+        const res = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${apiKey}&page=${(thisPage) ? thisPage : page}`)
         const data = await res.json();
         console.log("Today: ", data);
         setViewing('today');
@@ -86,17 +82,13 @@ export default function App() {
     }
 
     useEffect(() => {
-        if (page < 1) {
-            setPage(1);
-        }
-        console.log("Page: ", page);
         if (viewing === "today") {
-            topToday();
+            topToday(page);
         }
         else if (viewing === "week") {
-            topWeek();
+            topWeek(page);
         }
-    }, [page])
+    }, [page, viewing])
 
     return (
         <div className="app">
